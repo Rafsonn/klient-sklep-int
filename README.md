@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# Klient sklepu internetowego
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prosta aplikacja sklepu internetowego stworzona przy użyciu HTML, CSS, TypeScript, React, React Router, Vite.
 
-Currently, two official plugins are available:
+## Opis projektu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aplikacja umożliwia przeglądanie produktów, dodawanie ich do koszyka, zarządzanie zawartością koszyka oraz składanie zamówień.
 
-## Expanding the ESLint configuration
+## Założenia i podejście
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Z załoenia aplikacja miała być mała, ale elegancka. Łatwo rozszerzalna, ale nie przekomplikowana. Wykorzystałem:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React Router do nawigacji między stronami
+- createContext do zarządzania stanem koszyka
+- TypeScript do typowania danych
+- Vite do budowania i uruchamiania aplikacji
+- localStorage do przechowywania danych koszyka między sesjami
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Struktura projektu została zorganizowana w sposób modułowy, co ułatwia rozbudowę i utrzymanie kodu.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Instrukcja uruchomienia
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Sklonuj repozytorium:
+   ```
+   git clone https://github.com/Rafsonn/klient-sklep-int.git
+   cd klient-sklep-int
+   ```
+
+2. Zainstaluj zależności:
+   ```
+   npm install
+   ```
+
+3. Uruchom aplikację w trybie deweloperskim:
+   ```
+   npm run dev
+   ```
+
+4. Aplikacja będzie dostępna pod adresem: `http://localhost:5173/`
+
+5. Możesz również uruchomić aplikację bezpośrednio z GitHub Pages pod adresem: https://Rafsonn.github.io/klient-sklep-int

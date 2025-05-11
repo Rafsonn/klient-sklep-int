@@ -16,7 +16,9 @@ const OrderSummaryPage: React.FC = () => {
     }));
     
     // Redirect to the confirmation page (full page load)
-    window.location.href = '/confirmation.html';
+    // For GitHub Pages with HashRouter, we need to use the correct path
+    const basePath = import.meta.env.BASE_URL || '/';
+    window.location.href = `${basePath}confirmation.html`;
   };
   
   // Redirect to products if cart is empty
